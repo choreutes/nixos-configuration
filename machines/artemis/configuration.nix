@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ../../roles/common
   ];
 
   boot = {
@@ -10,27 +11,9 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
-    supportedFilesystems = [ "ntfs" ];
-
-    tmpOnTmpfs = true;
-  };
-
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "de";
   };
 
   hardware.pulseaudio.enable = true;
-
-  i18n = {
-    defaultLocale = "de_DE.UTF-8";
-    supportedLocales = [
-      "de_DE.UTF-8/UTF-8"
-      "en_GB.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-    ];
-  };
 
   networking = {
     hostName = "artemis.cryptoplexity.de";
@@ -48,8 +31,6 @@
   };
 
   sound.enable = true;
-
-  time.timeZone = "Europe/Berlin";
 
   environment = {
     etc = {
@@ -83,14 +64,6 @@
         -----END CERTIFICATE-----
         '';
     };
-
-    systemPackages = with pkgs; [
-      git
-      htop
-      subversion
-      tree
-      vim
-    ];
   };
 
   fonts.fonts = with pkgs; [
@@ -135,21 +108,10 @@
     vim.defaultEditor = true;
 
     waybar.enable = true;
-
-    zsh = {
-      enable = true;
-
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-
-      ohMyZsh.enable = true;
-    };
   };
 
   services = {
     connman.enable = true;
-
-    resolved.enable = true;
 
     openssh.enable = true;
 
