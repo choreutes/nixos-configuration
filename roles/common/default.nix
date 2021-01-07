@@ -2,15 +2,14 @@
 
 {
 
+  imports = [
+    ./localisation.nix
+  ];
+
   boot = {
     supportedFilesystems = [ "btrfs" "ntfs" ];
 
     tmpOnTmpfs = true;
-  };
-
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "de";
   };
 
   environment.systemPackages = with pkgs; [
@@ -19,15 +18,6 @@
     tree
     vim
   ];
-
-  i18n = {
-    defaultLocale = "de_DE.UTF-8";
-    supportedLocales = [
-      "de_DE.UTF-8/UTF-8"
-      "en_GB.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-    ];
-  };
 
   programs = {
     zsh = {
