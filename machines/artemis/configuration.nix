@@ -16,7 +16,8 @@
   hardware.pulseaudio.enable = true;
 
   networking = {
-    hostName = "artemis.cryptoplexity.de";
+    domain = "choreutes.de";
+    hostName = "artemis";
 
     useDHCP = false;  # Deprecated option
 
@@ -131,6 +132,10 @@
 
   users = {
     defaultUserShell = pkgs.zsh;
+
+    groups = {
+      network = { };
+    };
 
     mutableUsers = false;
 
