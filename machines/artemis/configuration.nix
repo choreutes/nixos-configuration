@@ -4,6 +4,9 @@
   imports = [
     ./hardware-configuration.nix
     ../../roles/common
+    ../../roles/graphical
+    ../../roles/mobile
+    ../../users/choreutes
   ];
 
   boot = {
@@ -13,32 +16,15 @@
     };
   };
 
-  hardware.pulseaudio.enable = true;
-
   networking = {
     domain = "choreutes.de";
     hostName = "artemis";
 
     useDHCP = false;  # Deprecated option
-
-    wireless = {
-      enable = true;
-
-      userControlled = {
-        enable = true;
-        group = "network";
-      };
-    };
   };
-
-  sound.enable = true;
 
   environment = {
     etc = {
-      "iwd/main.conf".text = ''
-        [General]
-        EnableNetworkConfiguration=true
-        '';
       "ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem".text = ''
         -----BEGIN CERTIFICATE-----
         MIIDwzCCAqugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBgjELMAkGA1UEBhMCREUx
@@ -67,96 +53,6 @@
     };
   };
 
-  fonts.fonts = with pkgs; [
-    dejavu_fonts
-    fira
-    fira-code
-    fira-mono
-    font-awesome
-    gyre-fonts
-    hack-font
-    liberation_ttf
-    libertine
-    lmmath
-    lmodern
-    noto-fonts
-    roboto
-    source-code-pro
-    source-sans-pro
-    source-serif-pro
-    stix-otf
-  ];
-
-  programs = {
-    fish.enable = true;
-
-    qt5ct.enable = true;
-
-    sway = {
-      enable = true;
-
-      extraPackages = with pkgs; [
-        alacritty
-        kitty
-        swayidle
-        swaylock
-        xwayland
-        waybar
-        wofi
-      ];
-    };
-
-    vim.defaultEditor = true;
-
-    waybar.enable = true;
-  };
-
-  services = {
-    connman.enable = true;
-
-    openssh.enable = true;
-
-    printing.enable = true;
-
-    xserver = {
-      desktopManager.plasma5.enable = true;
-      displayManager.sddm.enable = true;
-
-      enable = true;
-
-      layout = "de";
-
-      libinput.enable = true;
-    };
-  };
-
-  users = {
-    defaultUserShell = pkgs.zsh;
-
-    groups = {
-      network = { };
-    };
-
-    mutableUsers = false;
-
-    users = {
-      choreutes = {
-        isNormalUser = true;
-
-        group = "users";
-        extraGroups = [ "wheel" "network" ];
-
-        passwordFile = "/etc/nixos/configuration.d/user_passwords/choreutes_artemis_cryptoplexity.pw";
-
-        packages = with pkgs; [
-          home-manager
-        ];
-
-        useDefaultShell = true;
-      };
-    };
-  };
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -164,6 +60,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "20.03"; # Did you read the comment?
-
 }
-

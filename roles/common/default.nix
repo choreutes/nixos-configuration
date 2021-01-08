@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 {
-
   imports = [
     ./localisation.nix
+    ../../services/zsh.nix
   ];
 
   boot = {
@@ -20,21 +20,14 @@
   ];
 
   programs = {
-    zsh = {
-      enable = true;
-
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-
-      ohMyZsh.enable = true;
-    };
+    vim.defaultEditor = true;
   };
 
   services = {
+    openssh.enable = true;
+
     resolved.enable = true;
   };
 
-  time.timeZone = "Europe/Berlin";
-
+  users.mutableUsers = false;
 }
-
