@@ -23,11 +23,7 @@
     vim.defaultEditor = true;
   };
 
-  services = {
-    openssh.enable = true;
-
-    resolved.enable = true;
-  };
+  services.resolved.enable = true;
 
   users.mutableUsers = false;
 }
