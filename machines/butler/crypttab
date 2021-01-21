@@ -1,0 +1,2 @@
+vault	/dev/disk/by-uuid/d6eb7870-79da-4f96-a5e4-b88eb807249e	/etc/nixos/keyfiles/vault.key
+vault2	/dev/disk/by-uuid/b6072328-3fe3-41ae-94f8-598bd68ea2c0	/etc/nixos/keyfiles/vault.key

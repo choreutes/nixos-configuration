@@ -7,6 +7,8 @@
   ];
 
   boot = {
+    initrd.supportedFilesystems = [ "btrfs" ];
+
     kernelPackages = pkgs.linuxPackages_latest;
 
     supportedFilesystems = [ "btrfs" "ntfs" ];
