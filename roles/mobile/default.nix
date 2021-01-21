@@ -40,6 +40,8 @@
     };
   };
 
+  powerManagement.cpuFreqGovernor = "powersave";
+
   services.connman.enable = true;
 
   users.groups.network = { };
