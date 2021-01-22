@@ -5,7 +5,11 @@
     ./fonts.nix
   ];
 
-  hardware.pulseaudio.enable = true;
+  hardware = {
+    firmware = with pkgs; [ sof-firmware ];
+
+    pulseaudio.enable = true;
+  };
 
   programs = {
     qt5ct.enable = true;

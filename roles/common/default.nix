@@ -23,6 +23,8 @@
     vim
   ];
 
+  hardware.enableRedistributableFirmware = true;
+
   programs = {
     vim.defaultEditor = true;
   };
