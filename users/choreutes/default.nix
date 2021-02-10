@@ -5,7 +5,7 @@
     isNormalUser = true;
 
     group = "users";
-    extraGroups = [ "wheel" "network" ];
+    extraGroups = [ "wheel" "network" "cdrom" ];
 
     passwordFile = "/etc/nixos/configuration.d/users/choreutes/login_password.pw";
 
