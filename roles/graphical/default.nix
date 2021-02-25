@@ -5,6 +5,10 @@
     ./fonts.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    qt5ct
+  ];
+
   hardware = {
     firmware = with pkgs; [ sof-firmware ];
 
@@ -12,8 +16,6 @@
   };
 
   programs = {
-    qt5ct.enable = true;
-
     sway = {
       enable = true;
 
