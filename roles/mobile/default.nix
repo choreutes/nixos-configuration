@@ -31,6 +31,8 @@
     };
   };
 
+  hardware.brillo.enable = true;
+
   networking.wireless = {
     enable = true;
 
