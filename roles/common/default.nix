@@ -15,6 +15,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    acpid
     git
     htop
     tree
@@ -27,7 +28,11 @@
     vim.defaultEditor = true;
   };
 
-  services.resolved.enable = true;
+  services = {
+    acpid.enable = true;
+
+    resolved.enable = true;
+  };
 
   users.mutableUsers = false;
 }
