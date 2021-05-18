@@ -15,6 +15,8 @@
     pulseaudio.enable = true;
   };
 
+  nixpkgs.config.pulseaudio = true;
+
   programs = {
     sway = {
       enable = true;
