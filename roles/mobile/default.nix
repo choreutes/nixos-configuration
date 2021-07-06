@@ -31,7 +31,13 @@
     };
   };
 
-  hardware.brillo.enable = true;
+  hardware = {
+    bluetooth.enable = true;
+
+    brillo.enable = true;
+
+    pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
+  };
 
   networking.wireless = {
     enable = true;
