@@ -36,7 +36,14 @@
   };
 
   services = {
-    printing.enable = true;
+    printing = {
+      enable = true;
+
+      drivers = with pkgs; [
+        gutenprint
+        hplip
+      ];
+    };
 
     xserver = {
       desktopManager.plasma5.enable = true;
