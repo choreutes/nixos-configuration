@@ -32,6 +32,8 @@
     acpid.enable = true;
 
     resolved.enable = true;
+
+    smartd.enable = true;
   };
 
   users.mutableUsers = false;
