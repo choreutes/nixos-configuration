@@ -38,5 +38,9 @@
     smartd.enable = true;
   };
 
+  systemd.extraConfig  = ''
+    DefaultTimeoutStopSec=30s
+  '';
+
   users.mutableUsers = false;
 }
