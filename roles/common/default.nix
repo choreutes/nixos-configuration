@@ -31,6 +31,8 @@
   services = {
     acpid.enable = true;
 
+    fwupd.enable = true;
+
     resolved.enable = true;
 
     smartd.enable = true;
