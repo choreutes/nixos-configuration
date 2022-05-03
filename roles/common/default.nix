@@ -18,6 +18,7 @@
     acpid
     git
     htop
+    smartmontools
     tree
     vim
   ];
