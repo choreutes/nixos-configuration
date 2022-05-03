@@ -6,6 +6,8 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    alacritty
+    kitty
     qt5ct
   ];
 
@@ -22,8 +24,6 @@
       enable = true;
 
       extraPackages = with pkgs; [
-        alacritty
-        kitty
         swayidle
         swaylock
         xwayland
