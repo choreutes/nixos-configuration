@@ -35,8 +35,6 @@
     bluetooth.enable = true;
 
     brillo.enable = true;
-
-    pulseaudio.extraModules = [ pkgs.pulseaudio-modules-bt ];
   };
 
   networking.wireless = {
