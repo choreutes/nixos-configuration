@@ -37,20 +37,15 @@
     brillo.enable = true;
   };
 
-  networking.wireless = {
-    enable = true;
-
-    interfaces = [ "wlp3s0" ];
-
-    userControlled = {
+  networking = {
+    networkmanager = {
       enable = true;
-      group = "network";
+
+      wifi.backend = "iwd";
     };
   };
 
   powerManagement.cpuFreqGovernor = "powersave";
-
-  services.connman.enable = true;
 
   #services.acpid.handlers = {
   #  ac-power = {
