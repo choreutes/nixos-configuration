@@ -9,10 +9,17 @@
     alacritty
     kitty
     qt5ct
+    razergenie
   ];
 
   hardware = {
     firmware = with pkgs; [ sof-firmware ];
+
+    openrazer = {
+      enable = true;
+
+      users = [ "choreutes" ];
+    };
 
     pulseaudio.enable = true;
   };
