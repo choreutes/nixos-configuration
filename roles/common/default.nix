@@ -32,6 +32,8 @@
   services = {
     acpid.enable = true;
 
+    avahi.enable = true;
+
     fwupd.enable = true;
 
     resolved.enable = true;
