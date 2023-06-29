@@ -11,7 +11,7 @@
 
     supportedFilesystems = [ "btrfs" "ntfs" ];
 
-    tmpOnTmpfs = true;
+    tmp.useTmpfs = true;
   };
 
   environment.systemPackages = with pkgs; [
