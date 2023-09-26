@@ -7,7 +7,7 @@
     group = "users";
     extraGroups = [ "wheel" "video" "network" "cdrom" ];
 
-    openssh.authorizedKeys.keyFiles = [ "/etc/nixos/configuration.d/users/choreutes/ssh_key.pub" ];
+    openssh.authorizedKeys.keyFiles = [ /etc/nixos/configuration.d/users/choreutes/ssh_key.pub ];
 
     passwordFile = "/etc/nixos/configuration.d/users/choreutes/login_password.pw";
 
