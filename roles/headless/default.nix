@@ -5,5 +5,9 @@
     ../../services/sshd.nix
   ];
 
-  networking.firewall.enable = true;
+  networking = {
+    firewall.enable = true;
+
+    nftables.enable = true;
+  };
 }
