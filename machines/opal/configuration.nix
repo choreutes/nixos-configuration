@@ -3,6 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./network-configuration.nix
     ../../roles/common
     ../../roles/headless
     ../../users/choreutes
