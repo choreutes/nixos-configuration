@@ -13,6 +13,7 @@
     libertine
     lmmath
     lmodern
+    (nerdfonts.override { fonts = [ "FiraCode" "FiraMono" "Meslo" "SourceCodePro" ]; })
     noto-fonts
     roboto
     source-code-pro
