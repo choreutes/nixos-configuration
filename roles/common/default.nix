@@ -3,7 +3,7 @@
 {
   imports = [
     ./localisation.nix
-    ../../services/zsh.nix
+    ./zsh.nix
   ];
 
   boot = {
