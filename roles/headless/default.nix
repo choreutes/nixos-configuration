@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../services/sshd.nix
+    ./sshd.nix
   ];
 
   networking = {
