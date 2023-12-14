@@ -18,7 +18,6 @@
     acpid
     git
     htop
-    smartmontools
     tree
     vim
   ];
@@ -37,8 +36,6 @@
     fwupd.enable = true;
 
     resolved.enable = true;
-
-    smartd.enable = true;
   };
 
   systemd.extraConfig  = ''

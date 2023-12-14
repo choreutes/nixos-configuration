@@ -8,8 +8,8 @@
   environment.systemPackages = with pkgs; [
     alacritty
     kitty
-    qt5ct
     razergenie
+    smartmontools
   ];
 
   hardware = {
@@ -51,6 +51,8 @@
         hplip
       ];
     };
+
+    smartd.enable = true;
 
     xserver = {
       desktopManager.plasma5.enable = true;
