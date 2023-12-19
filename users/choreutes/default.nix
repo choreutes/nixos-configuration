@@ -9,7 +9,7 @@
 
     openssh.authorizedKeys.keyFiles = [ /etc/nixos/configuration.d/users/choreutes/ssh_key.pub ];
 
-    passwordFile = "/etc/nixos/configuration.d/users/choreutes/login_password.pw";
+    hashedPasswordFile = "/etc/nixos/configuration.d/users/choreutes/login_password.pw";
 
     packages = with pkgs; [
       home-manager
