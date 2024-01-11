@@ -6,6 +6,7 @@
     ./network-configuration.nix
     ../../roles/common
     ../../roles/headless
+    ../../services/webserver
     ../../users/choreutes
   ];
 
