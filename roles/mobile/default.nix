@@ -45,8 +45,6 @@
     };
   };
 
-  powerManagement.cpuFreqGovernor = "powersave";
-
   #services.acpid.handlers = {
   #  ac-power = {
   #    action = ''
