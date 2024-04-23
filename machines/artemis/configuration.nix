@@ -11,6 +11,8 @@
   ];
 
   boot = {
+    kernelParams = [ "amd_pstate=guided" ];
+
     loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
