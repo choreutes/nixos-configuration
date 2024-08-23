@@ -17,6 +17,7 @@
   environment.systemPackages = with pkgs; [
     acpid
     git
+    gnumake
     htop
     tree
     vim
@@ -43,4 +44,6 @@
   '';
 
   users.mutableUsers = false;
+
+  virtualisation.podman.enable = true;
 }
