@@ -21,16 +21,12 @@
     #kernelPackages = pkgs.linuxPackages_latest;
   };
 
-  hardware.opengl = {
-    driSupport = true;
+  hardware.amdgpu = {
+    amdvlk.enable = true;
 
-    enable = true;
+    initrd.enable = true;
 
-    extraPackages = with pkgs; [
-      amdvlk
-      rocm-opencl-icd
-      rocm-opencl-runtime
-    ];
+    opencl.enable = true;
   };
 
   networking = {

@@ -20,13 +20,15 @@
     gnumake
     htop
     tree
-    vim
   ];
 
   hardware.enableRedistributableFirmware = true;
 
   programs = {
-    vim.defaultEditor = true;
+    vim = {
+      defaultEditor = true;
+      enable = true;
+    };
   };
 
   services = {

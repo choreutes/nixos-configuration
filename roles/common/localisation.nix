@@ -15,7 +15,7 @@
     ];
   };
 
-  services.xserver.layout = "de";
+  services.xserver.xkb.layout = "de";
 
   time.timeZone = "Europe/Berlin";
 }
