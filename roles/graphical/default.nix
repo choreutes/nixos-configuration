@@ -20,11 +20,7 @@
 
       users = [ "choreutes" ];
     };
-
-    pulseaudio.enable = true;
   };
-
-  nixpkgs.config.pulseaudio = true;
 
   programs = {
     sway = {
@@ -43,6 +39,10 @@
   };
 
   services = {
+    displayManager.sddm.enable = true;
+
+    libinput.enable = true;
+
     printing = {
       enable = true;
 
@@ -56,15 +56,10 @@
 
     xserver = {
       desktopManager.plasma5.enable = true;
-      displayManager.sddm.enable = true;
 
       enable = true;
-
-      libinput.enable = true;
 
       wacom.enable = true;
     };
   };
-
-  sound.enable = true;
 }
