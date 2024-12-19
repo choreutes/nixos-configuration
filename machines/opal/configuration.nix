@@ -27,10 +27,14 @@
     useDHCP = false;  # Deprecated option
   };
 
-  services.syncthing = {
-    enable = true;
+  services = {
+    qemuGuest.enable = true;
 
-    openDefaultPorts = true;
+    syncthing = {
+      enable = true;
+
+      openDefaultPorts = true;
+    };
   };
 
   # This value determines the NixOS release from which the default
