@@ -24,6 +24,9 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  # Enable flake support
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   programs = {
     vim = {
       defaultEditor = true;
