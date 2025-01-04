@@ -2,7 +2,6 @@
 
 {
   imports = [
-    <nixos-hardware/lenovo/thinkpad/t14s/amd/gen1>
     ./hardware-configuration.nix
     ../../roles/common
     ../../roles/graphical
