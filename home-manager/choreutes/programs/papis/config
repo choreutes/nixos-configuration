@@ -1,0 +1,22 @@
+[settings]
+default-library = papers
+database-backend = papis
+file-browser = ranger
+sort-field = year
+use-cache = false
+
+[tui]
+editmode = vi
+
+options_list.selected_margin_style = fg:ansiblue
+options_list.unselected_margin_style =
+
+[manuals]
+dir = ~/Handbücher
+
+[papers]
+dir = ~/Papers
+header-format = {doc.html_escape[author]}
+  <b>“{doc.html_escape[title]}”</b>
+  <span>  in <i>{doc.html_escape[booktitle]}{doc.html_escape[journaltitle]}</i> <b>{doc.html_escape[volume]}</b>, p.{doc.html_escape[pages]} ({doc.html_escape[year]})</span>
+  <span>  <ansiblue>{doc.html_escape[tags]}</ansiblue></span>

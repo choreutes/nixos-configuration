@@ -1,0 +1,110 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: Roboto;
+	font-size: 16px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: rgba(239, 240, 241, 0.6);
+	border-bottom: 3px solid transparent;
+	color: black;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+#workspaces button {
+	padding: 0 5px;
+	background: transparent;
+	border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+	border-bottom: 3px solid rgba(61, 174, 233, 1.0);
+}
+
+#workspaces button.hover {
+	border-bottom: 3px solid rgba(61, 174, 233, 0.6);
+}
+
+#clock, #battery, #cpu, #memory, #backlight, #network, #pulseaudio, #custom-spotify, #tray, #mode, #idle_inhibitor {
+	border-radius: 10px;
+	margin: 3px 5px;
+	padding: 0 10px;
+
+}
+
+#mode {
+	background: rgba(61, 174, 233, 1.0);
+	color: white;
+	border-radius: 10px;
+	margin: 3px 5px;
+}
+
+#window {
+	font-size: 12px;
+}
+
+#clock {
+	font-weight: bold;
+}
+
+#battery {
+}
+
+#battery.charging {
+}
+
+@keyframes blink {
+	to {
+		background-color: transparent;
+		color: black;
+	}
+}
+
+#battery.warning:not(.charging) {
+	background: #F67400;
+	color: white;
+	animation-name: blink;
+	animation-duration: 2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+	background: #ED1515;
+	color: white;
+	animation-name: blink;
+	animation-duration: 1s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#backlight {
+}
+
+#network {
+}
+
+#network.disconnected {
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#tray {
+}
+
+#idle_inhibitor {
+}

@@ -1,0 +1,20 @@
+directory: ~/Musik
+library: ~/.local/share/beets/library.db
+
+ui:
+        color: yes
+
+import:
+        move: yes
+        write: no
+
+match:
+        preferred:
+                countries: ['DE', 'GB|UK', 'US']
+                media: ['CD', 'Digital Media|File']
+        ignored_media: ['Data CD', 'DVD', 'DVD-Video', 'Blu-ray', 'HD-DVD', 'VHS']
+
+paths:
+        default: $genre/$albumartist/$album%aunique{}/$track - $title
+        genre:Ballroom: Ballroom/$album%aunique{}/$track - $title ($comments)
+        genre:Soundtrack: Soundtracks/$album%aunique{}/$track - $title
