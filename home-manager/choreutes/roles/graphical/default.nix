@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, firefox-addons, ... }:
 
 {
   imports = [
@@ -30,7 +30,7 @@
       enable = true;
 
       profiles.choreutes = {
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        extensions = with firefox-addons.packages.${pkgs.system}; [
           ublock-origin
         ];
       };
@@ -66,11 +66,11 @@
     };
   };
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-      inherit pkgs;
-    };
-  };
+  # nixpkgs.config.packageOverrides = pkgs: {
+  #   nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
+  #     inherit pkgs;
+  #   };
+  # };
 
   services.syncthing.enable = true;
 
