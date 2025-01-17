@@ -5,16 +5,19 @@
     ../graphical
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.kdePackages; [
     kaddressbook
     kcalc
     kontact
     korganizer
     kmail
     plasma-nm
-    syncthingtray
     wacomtablet
   ];
 
-  services.kdeconnect.enable = true;
+  services.kdeconnect = {
+    enable = true;
+
+    package = pkgs.kdePackages.kdeconnect-kde;
+  };
 }
