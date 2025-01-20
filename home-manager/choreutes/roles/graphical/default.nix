@@ -23,14 +23,12 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
-
   programs = {
     firefox = {
       enable = true;
 
       profiles.choreutes = {
-        extensions = with firefox-addons.packages.${pkgs.system}; [
+        extensions = with pkgs.firefox-addons; [
           ublock-origin
         ];
       };

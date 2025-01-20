@@ -30,22 +30,55 @@
       nixos-hardware,
       home-manager,
       firefox-addons
-    }: 
+    }@inputs:
 
-    {
-      nixosConfigurations = {
-        artemis = nixpkgs.lib.nixosSystem {
+    let
+      mkStableNixOSConfiguration =
+        {
+          host,
+          nixpkgs,
+          nixpkgs-unstable,
+          home-manager,
+          extraModules ? [ ],
+          flake-inputs ? { }
+        }:
+        nixpkgs.lib.nixosSystem {
           modules = [
-            ./machines/artemis/configuration.nix
-            nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1
+            ./machines/${host.directory}/configuration.nix
+            ./overlays
             home-manager.nixosModules.home-manager
             {
-              home-manager.extraSpecialArgs = { inherit firefox-addons; };
-              home-manager.users.choreutes = import ./home-manager/choreutes/machines/artemis/home.nix;
+              nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
+                "zoom"
+              ];
+              home-manager.useGlobalPkgs = true;
+              home-manager.users.choreutes = import ./home-manager/choreutes/machines/${host.name}/home.nix;
             }
-          ];
+          ] ++ extraModules;
 
-          system = "x86_64-linux";
+          specialArgs = {
+            inherit flake-inputs;
+
+            pkgs-unstable = (import nixpkgs-unstable) { inherit (host) system; };
+          };
+
+          inherit (host) system;
+        };
+    in
+    {
+      nixosConfigurations = {
+        artemis = mkStableNixOSConfiguration {
+          host = {
+            directory = "artemis";
+            name = "artemis";
+            system = "x86_64-linux";
+          };
+
+          inherit nixpkgs nixpkgs-unstable home-manager;
+
+          extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1 ];
+
+          flake-inputs = { inherit firefox-addons; };
         };
       };
     };
