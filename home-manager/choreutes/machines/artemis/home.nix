@@ -12,11 +12,13 @@
   ];
 
   home = {
-    sessionVariables = {
-      LEDGER_HOME = "${config.home.homeDirectory}/Finanzen";
-    };
-
     stateVersion = "23.05";
   };
 
+  host-specific = {
+    ledger = {
+      file = "${config.home.homeDirectory}/Finanzen/main.ledger";
+      pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
+    };
+  };
 }
