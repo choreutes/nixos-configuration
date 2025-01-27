@@ -20,5 +20,9 @@
       file = "${config.home.homeDirectory}/Finanzen/main.ledger";
       pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
     };
+
+    papis = {
+      library-dir = "${config.home.homeDirectory}/Library";
+    };
   };
 }
