@@ -80,6 +80,16 @@
 
           flake-inputs = { inherit firefox-addons; };
         };
+
+        opal = mkStableNixOSConfiguration {
+          host = {
+            directory = "opal";
+            name = "opal";
+            system = "x86_64-linux";
+          };
+
+          inherit nixpkgs nixpkgs-unstable home-manager;
+        };
       };
     };
 }
