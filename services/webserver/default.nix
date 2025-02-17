@@ -1,4 +1,7 @@
-{ config, pkgs, ... }:
+{
+  config,
+  ...
+}:
 
 {
   imports = [
@@ -7,5 +10,7 @@
     ./nginx.nix
   ];
 
-  networking.firewall.allowedTCPPorts = [ 80 443 ];
+  config = {
+    networking.firewall.allowedTCPPorts = [ 80 443 ];
+  };
 }
