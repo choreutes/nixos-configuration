@@ -9,6 +9,17 @@
 
       nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
+      nixos-mailserver = {
+        inputs = {
+          nixpkgs.follows = "nixpkgs-unstable";
+          nixpkgs-24_11.follows = "nixpkgs";
+        };
+        owner = "simple-nixos-mailserver";
+        ref = "nixos-24.11";
+        repo = "nixos-mailserver";
+        type = "gitlab";
+      };
+
       home-manager = {
         url = "github:nix-community/home-manager/release-24.11";
 
@@ -28,6 +39,7 @@
       nixpkgs,
       nixpkgs-unstable,
       nixos-hardware,
+      nixos-mailserver,
       home-manager,
       firefox-addons
     }@inputs:
