@@ -101,6 +101,8 @@
           };
 
           inherit nixpkgs nixpkgs-unstable home-manager;
+
+          extraModules = [ nixos-mailserver.nixosModule ];
         };
       };
     };
