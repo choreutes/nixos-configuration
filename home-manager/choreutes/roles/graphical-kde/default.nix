@@ -8,6 +8,7 @@
   home.packages = with pkgs.kdePackages; [
     kaddressbook
     kcalc
+    kclock
     kontact
     korganizer
     kmail
