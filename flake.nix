@@ -57,12 +57,10 @@
         nixpkgs.lib.nixosSystem {
           modules = [
             ./machines/${host.directory}/configuration.nix
+            ./nixpkgs-config
             ./overlays
             home-manager.nixosModules.home-manager
             {
-              nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (nixpkgs.lib.getName pkg) [
-                "zoom"
-              ];
               home-manager.useGlobalPkgs = true;
               home-manager.users.choreutes = import ./home-manager/choreutes/machines/${host.name}/home.nix;
             }

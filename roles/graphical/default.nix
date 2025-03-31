@@ -62,6 +62,7 @@
       drivers = with pkgs; [
         gutenprint
         hplip
+        cups-brother-hll2340dw
       ];
     };
 
