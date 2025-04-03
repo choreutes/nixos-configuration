@@ -1,5 +1,6 @@
 {
   config,
+  options,
   ...
 }:
 
@@ -23,6 +24,13 @@
           catchAll = [ "choreutes.de" ];
           hashedPasswordFile = "/etc/nixos/configuration.d/users/choreutes/mail_password.pw";
           name = "choreutes";
+        };
+      };
+
+      mailboxes = options.mailserver.mailboxes.default // {
+        Archive = {
+          auto = "subscribe";
+          specialUse = "Archive";
         };
       };
 
