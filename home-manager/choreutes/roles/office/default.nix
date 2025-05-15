@@ -6,7 +6,7 @@
   ];
 
   home.packages = with pkgs; [
-    libreoffice-qt
+    libreoffice-qt6
     xournalpp
   ];
 }
