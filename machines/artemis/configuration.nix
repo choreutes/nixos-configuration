@@ -10,7 +10,14 @@
   ];
 
   boot = {
-    kernelParams = [ "amd_pstate=guided" ];
+    kernelModules = [
+      "amd_pstate"
+      "amd_pstate_ut"
+    ];
+
+    kernelParams = [
+      "amd_pstate=guided"
+    ];
 
     loader = {
       systemd-boot.enable = true;
