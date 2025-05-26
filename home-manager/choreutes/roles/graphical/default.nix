@@ -28,9 +28,11 @@
       enable = true;
 
       profiles.choreutes = {
-        extensions = with pkgs.firefox-addons; [
-          ublock-origin
-        ];
+        extensions = {
+          packages = with pkgs.firefox-addons; [
+            ublock-origin
+          ];
+        };
       };
     };
 

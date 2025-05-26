@@ -10,7 +10,7 @@
 
     dotDir = ".config/zsh";
 
-    initExtra = ''
+    initContent = ''
       if zmodload zsh/terminfo && (( terminfo[colors] >=256 )); then
         [[ ! -f ${config.xdg.configHome}/zsh/.p10k.zsh ]] || source ${config.xdg.configHome}/zsh/.p10k.zsh
       else
