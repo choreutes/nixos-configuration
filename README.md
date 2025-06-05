@@ -14,45 +14,45 @@ I will play around with it for a bit and then start refactoring the configuratio
 Over time the real structure and the scratchpad will hopefully converge.
 
     nixos-configuration
-    ┣━flake.nix
-    ┣━flake.lock
-    ┣━hosts/
-    ┃ ┣━artemis/
-    ┃ ┃ ┣━configuration.nix
-    ┃ ┃ ┗━hardware-configuration.nix
-    ┃ ┣━butler/
-    ┃ ┃ ┣━configuration.nix
-    ┃ ┃ ┗━hardware-configuration.nix
-    ┃ ┗━opal/
-    ┃   ┣━configuration.nix
-    ┃   ┣━hardware-configuration.nix
-    ┃   ┗━network-configuration.nix
-    ┣━modules/
-    ┃ ┣━common/
-    ┃ ┣━gui/
-    ┃ ┃ ┣━plasma.nix
-    ┃ ┃ ┗━sway.nix
-    ┃ ┣━home-manager/
-    ┃ ┣━mailserver/
-    ┃ ┣━webserver/
-    ┃ ┗━wireless/
-    ┣━nixpkgs/
-    ┃ ┣━overlays.nix
-    ┃ ┗━unfree-packages.nix
-    ┗━users/
-      ┣━choreutes/
-      ┃ ┣━login_password (not included)
-      ┃ ┗━home-configuration/
-      ┃   ┣━hosts/
-      ┃   ┃ ┣━artemis.nix
-      ┃   ┃ ┣━butler.nix
-      ┃   ┃ ┗━opal.nix
-      ┃   ┗━modules/
-      ┃     ┣━common/
-      ┃     ┣━gaming/
-      ┃     ┣━media/
-      ┃     ┗━productivity/
-      ┗━root/
+    ┣━━ flake.nix
+    ┣━━ flake.lock
+    ┣━━ hosts/
+    ┃   ┣━━ artemis/
+    ┃   ┃   ┣━━ configuration.nix
+    ┃   ┃   ┗━━ hardware-configuration.nix
+    ┃   ┣━━ butler/
+    ┃   ┃   ┣━━ configuration.nix
+    ┃   ┃   ┗━━ hardware-configuration.nix
+    ┃   ┗━━ opal/
+    ┃       ┣━━ configuration.nix
+    ┃       ┣━━ hardware-configuration.nix
+    ┃       ┗━━ network-configuration.nix
+    ┣━━ modules/
+    ┃   ┣━━ common/
+    ┃   ┣━━ gui/
+    ┃   ┃   ┣━━ plasma.nix
+    ┃   ┃   ┗━━ sway.nix
+    ┃   ┣━━ home-manager/
+    ┃   ┣━━ mailserver/
+    ┃   ┣━━ webserver/
+    ┃   ┗━━ wireless/
+    ┣━━ nixpkgs/
+    ┃   ┣━━ overlays.nix
+    ┃   ┗━━ unfree-packages.nix
+    ┗━━ users/
+        ┣━━ choreutes/
+        ┃   ┣━━ login_password (not included)
+        ┃   ┗━━ home-configuration/
+        ┃       ┣━━ hosts/
+        ┃       ┃   ┣━━ artemis.nix
+        ┃       ┃   ┣━━ butler.nix
+        ┃       ┃   ┗━━ opal.nix
+        ┃       ┗━━ modules/
+        ┃           ┣━━ common/
+        ┃           ┣━━ gaming/
+        ┃           ┣━━ media/
+        ┃           ┗━━ productivity/
+        ┗━━ root/
 
 Most of the directories above will contain `default.nix` files.
 They are not included in the structure as they would not add any additional information but considerably clutter the overall picture.
