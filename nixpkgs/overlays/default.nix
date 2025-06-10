@@ -15,7 +15,6 @@ let
   };
 in {
   nixpkgs.overlays = [
-    (unstable-previews-overlay)
     (firefox-addons-overlay)
   ];
 }

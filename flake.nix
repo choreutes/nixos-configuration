@@ -57,8 +57,7 @@
         nixpkgs.lib.nixosSystem {
           modules = [
             ./machines/${host.directory}/configuration.nix
-            ./nixpkgs-config
-            ./overlays
+            ./nixpkgs
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
