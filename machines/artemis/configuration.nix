@@ -3,7 +3,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../roles/common
+    ../../modules/common
     ../../roles/graphical
     ../../roles/mobile
     ../../users/choreutes

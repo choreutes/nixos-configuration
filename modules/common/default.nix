@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   imports = [
@@ -15,10 +19,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    acpid
-    git
     gnumake
-    htop
     tree
   ];
 
@@ -28,6 +29,10 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   programs = {
+    git.enable = true;
+
+    htop.enable = true;
+
     vim = {
       defaultEditor = true;
       enable = true;

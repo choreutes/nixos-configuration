@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ./network-configuration.nix
-    ../../roles/common
+    ../../modules/common
     ../../roles/headless
     ../../services/mailserver
     ../../services/webserver
