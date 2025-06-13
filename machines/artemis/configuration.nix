@@ -4,7 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common
-    ../../roles/graphical
+    ../../modules/gui
     ../../roles/mobile
     ../../users/choreutes
   ];
