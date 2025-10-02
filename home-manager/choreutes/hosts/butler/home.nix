@@ -8,8 +8,8 @@
     ../../roles/office
     ../../roles/personal
 
-    ../../features/common
-    ../../features/productivity
+    ../../modules/common
+    ../../modules/productivity
   ];
 
   home = {

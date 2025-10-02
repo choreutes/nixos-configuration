@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ../../features/common
+    ../../modules/common
   ];
 
   home = {

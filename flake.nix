@@ -56,12 +56,12 @@
         }:
         nixpkgs.lib.nixosSystem {
           modules = [
-            ./machines/${host.directory}/configuration.nix
+            ./hosts/${host.directory}/configuration.nix
             ./nixpkgs
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
-              home-manager.users.choreutes = import ./home-manager/choreutes/machines/${host.name}/home.nix;
+              home-manager.users.choreutes = import ./home-manager/choreutes/hosts/${host.name}/home.nix;
             }
           ] ++ extraModules;
 

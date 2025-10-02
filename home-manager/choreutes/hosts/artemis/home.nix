@@ -7,8 +7,8 @@
     ../../roles/personal
     ../../roles/work
 
-    ../../features/common
-    ../../features/productivity
+    ../../modules/common
+    ../../modules/productivity
   ];
 
   home = {
