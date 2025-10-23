@@ -2,12 +2,12 @@
 
 {
   imports = [
-    ../../roles/graphical-kde
     ../../roles/office
     ../../roles/personal
     ../../roles/work
 
     ../../modules/common
+    ../../modules/gui
     ../../modules/productivity
   ];
 
@@ -16,6 +16,12 @@
   };
 
   host-specific = {
+    gui = {
+      enable = true;
+
+      kde-programs.enable = true;
+    };
+
     ledger = {
       file = "${config.home.homeDirectory}/Finanzen/main.ledger";
       pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
