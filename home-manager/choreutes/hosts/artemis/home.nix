@@ -2,11 +2,10 @@
 
 {
   imports = [
-    ../../roles/office
     ../../roles/personal
-    ../../roles/work
 
     ../../modules/common
+    ../../modules/cryptoplexity
     ../../modules/gui
     ../../modules/productivity
   ];
@@ -16,6 +15,8 @@
   };
 
   host-specific = {
+    cryptoplexity.enable = true;
+
     gui = {
       enable = true;
 
