@@ -14,6 +14,12 @@
     stateVersion = "23.05";
   };
 
+  xdg.userDirs = {
+    documents = "${config.home.homeDirectory}/Dokumente";
+    music = "${config.home.homeDirectory}/Musik";
+    pictures = "${config.home.homeDirectory}/Bilder";
+  };
+
   host-specific = {
     cryptoplexity.enable = true;
 

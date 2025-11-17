@@ -38,6 +38,14 @@
       enable = true;
 
       mimeApps.enable = true;
+
+      userDirs = {
+        enable = true;
+
+        desktop = "${config.home.homeDirectory}/.Desktop";
+        publicShare = "${config.home.homeDirectory}/";
+        templates = "${config.home.homeDirectory}/";
+      };
     };
   };
 }
