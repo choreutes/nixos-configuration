@@ -10,13 +10,17 @@
 
       signing.key = "99CA7A000D9729CE!";
 
-      userName = "Tobias Schmalz";
-      userEmail = "github@choreutes.de";
-
       ignores = [
         "*.aux"
         "*.swp"
       ];
+
+      settings = {
+        user = {
+          name = "Tobias Schmalz";
+          email = "github@choreutes.de";
+        };
+      };
     };
   };
 }

@@ -28,8 +28,6 @@
   };
 
   hardware.amdgpu = {
-    amdvlk.enable = true;
-
     initrd.enable = true;
 
     opencl.enable = true;

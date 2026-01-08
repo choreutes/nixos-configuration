@@ -3,7 +3,7 @@
 
   inputs =
     {
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
 
       nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -11,17 +11,16 @@
 
       nixos-mailserver = {
         inputs = {
-          nixpkgs.follows = "nixpkgs-unstable";
-          nixpkgs-25_05.follows = "nixpkgs";
+          nixpkgs.follows = "nixpkgs";
         };
         owner = "simple-nixos-mailserver";
-        ref = "nixos-25.05";
+        ref = "nixos-25.11";
         repo = "nixos-mailserver";
         type = "gitlab";
       };
 
       home-manager = {
-        url = "github:nix-community/home-manager/release-25.05";
+        url = "github:nix-community/home-manager/release-25.11";
 
         inputs.nixpkgs.follows = "nixpkgs";
       };

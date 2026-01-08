@@ -49,10 +49,6 @@
     resolved.enable = true;
   };
 
-  systemd.extraConfig  = ''
-    DefaultTimeoutStopSec=30s
-  '';
-
   users.mutableUsers = false;
 
   virtualisation.podman.enable = true;

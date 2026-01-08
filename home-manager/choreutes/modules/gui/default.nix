@@ -90,6 +90,7 @@ in
 
       ssh = {
         enable = true;
+        enableDefaultConfig = false;
 
         matchBlocks = {
           "opal.choreutes.de" = {
@@ -101,6 +102,21 @@ in
                 host.address = "/run/user/1000/gnupg/S.gpg-agent.extra";
               }
             ];
+          };
+
+          # These are the default values for ssh host blocks.
+          # I'm keeping them around for now...
+          "*" = {
+            addKeysToAgent = "no";
+            compression = false;
+            controlMaster = "no";
+            controlPath = "~/.ssh/master-%r@%n:%p";
+            controlPersist = "no";
+            forwardAgent = false;
+            hashKnownHosts = false;
+            serverAliveCountMax = 3;
+            serverAliveInterval = 0;
+            userKnownHostsFile = "~/.ssh/known_hosts";
           };
         };
       };

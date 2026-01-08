@@ -8,7 +8,7 @@
   programs.zsh = {
     enable = true;
 
-    dotDir = ".config/zsh";
+    dotDir = "${config.xdg.configHome}/zsh";
 
     initContent = ''
       if zmodload zsh/terminfo && (( terminfo[colors] >=256 )); then
