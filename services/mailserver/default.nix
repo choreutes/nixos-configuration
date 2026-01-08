@@ -39,7 +39,7 @@
       vmailGroupName = "vmail";
       vmailUserName = "vmail";
 
-      stateVersion = 2;
+      stateVersion = 3;
     };
   };
 }
