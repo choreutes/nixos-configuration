@@ -34,6 +34,8 @@ in
       firefox = {
         enable = true;
 
+        languagePacks = [ "de" "en-US" ];
+
         profiles.choreutes = {
           extensions = {
             packages = with pkgs.firefox-addons; [
