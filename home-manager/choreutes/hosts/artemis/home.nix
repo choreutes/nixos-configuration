@@ -11,7 +11,7 @@
   ];
 
   home = {
-    stateVersion = "23.05";
+    stateVersion = "25.11";
   };
 
   xdg.userDirs = {

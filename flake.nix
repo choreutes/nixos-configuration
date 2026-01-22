@@ -84,7 +84,7 @@
 
           inherit nixpkgs nixpkgs-unstable home-manager;
 
-          extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-t14s-amd-gen1 ];
+          extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-l14-amd ];
 
           flake-inputs = { inherit firefox-addons; };
         };
