@@ -31,6 +31,12 @@ in
     };
 
     programs = {
+      browserpass = {
+        enable = true;
+
+        browsers = [ "firefox" ];
+      };
+
       firefox = {
         enable = true;
 
@@ -39,6 +45,7 @@ in
         profiles.choreutes = {
           extensions = {
             packages = with pkgs.firefox-addons; [
+              browserpass
               plasma-integration
               ublock-origin
             ];
