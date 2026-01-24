@@ -15,6 +15,9 @@
       "amd_pstate_ut"
     ];
 
+    # Use latest kernel for optimal support of hardware
+    kernelPackages = pkgs.linuxPackages_latest;
+
     kernelParams = [
       "amd_pstate=guided"
     ];
@@ -23,8 +26,6 @@
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
-    #kernelPackages = pkgs.linuxPackages_latest;
   };
 
   hardware.amdgpu = {
