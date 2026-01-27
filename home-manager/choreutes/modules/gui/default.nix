@@ -42,6 +42,10 @@ in
 
         languagePacks = [ "de" "en-US" ];
 
+        nativeMessagingHosts = with pkgs; [
+          kdePackages.plasma-browser-integration
+        ];
+
         profiles.choreutes = {
           extensions = {
             packages = with pkgs.firefox-addons; [
