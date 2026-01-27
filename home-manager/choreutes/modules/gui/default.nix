@@ -146,7 +146,9 @@ in
         sshKeys = [ "178D43591E8A412D0AA5098567E5AEF509BB3C0A" ];
       };
 
-      syncthing.enable = true;
+      nextcloud-client = {
+        enable = true;
+      };
     };
   };
 }
