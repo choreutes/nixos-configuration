@@ -3,37 +3,63 @@
 {
   accounts.email = {
     accounts = {
-      "Hera" = {
+      "Privat (Hera)" = {
         address = "tobias.schmalz@choreutes.de";
         gpg.key = "FCAD 0077 F53E EF0B 1517  37FA 08F1 32C5 8232 906D";
-        passwordCommand = "pass show e-mail/hera.m-0.eu/tobias.schmalz@choreutes.de";
+        passwordCommand = "pass show email/hera.maralorn.de/tobias.schmalz@choreutes.de";
+        realName = "Tobias Schmalz";
+        userName = "tobias.schmalz@choreutes.de";
+
+        imap = {
+          host = "hera.maralorn.de";
+          port = 993;
+          tls.enable = true;
+        };
+
+        smtp = {
+          host = "hera.maralorn.de";
+          port = 465;
+          tls.enable = true;
+        };
+
+        thunderbird = {
+          enable = true;
+
+          profiles = [ "choreutes" ];
+        };
+      };
+
+      "Privat (Opal)" = {
+        address = "tobias.schmalz@choreutes.de";
+        gpg.key = "FCAD 0077 F53E EF0B 1517  37FA 08F1 32C5 8232 906D";
+        passwordCommand = "pass show email/opal.choreutes.de/tobias.schmalz@choreutes.de";
         primary = true;
         realName = "Tobias Schmalz";
         userName = "tobias.schmalz@choreutes.de";
 
         imap = {
-          host = "hera.m-0.eu";
-          port = 143;
-          tls = {
-            enable = true;
-            useStartTls = true;
-          };
+          host = "opal.choreutes.de";
+          port = 993;
+          tls.enable = true;
         };
 
         smtp = {
-          host = "hera.m-0.eu";
-          port = 587;
-          tls = {
-            enable = true;
-            useStartTls = true;
-          };
+          host = "opal.choreutes.de";
+          port = 465;
+          tls.enable = true;
+        };
+
+        thunderbird = {
+          enable = true;
+
+          profiles = [ "choreutes" ];
         };
       };
 
-      "TUDa" = {
+      "TU Darmstadt" = {
         address = "tobias.schmalz@tu-darmstadt.de";
         gpg.key = "FCAD 0077 F53E EF0B 1517  37FA 08F1 32C5 8232 906D";
-        passwordCommand = "pass show e-mail/tu-darmstadt.de/zb83kexi";
+        passwordCommand = "pass show email/tu-darmstadt.de/zb83kexi";
         realName = "Tobias Schmalz";
         userName = "zb83kexi";
 
@@ -66,6 +92,12 @@
             };
           };
         };
+
+        thunderbird = {
+          enable = true;
+
+          profiles = [ "choreutes" ];
+        };
       };
     };
 
@@ -81,6 +113,8 @@
       profiles = {
         choreutes = {
           isDefault = true;
+
+          accountsOrder = [ "Privat (Opal)" "Privat (Hera)" "TU Darmstadt" ];
 
           settings = {
             "mailnews.display.html_as" = 1;
