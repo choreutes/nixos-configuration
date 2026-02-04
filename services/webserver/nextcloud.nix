@@ -20,7 +20,7 @@
       enableImagemagick = false;
 
       extraApps = with config.services.nextcloud.package.packages.apps; {
-        inherit calendar contacts cookbook;
+        inherit calendar contacts cookbook mail notes tasks;
       };
 
       extraAppsEnable = true;
