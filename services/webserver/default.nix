@@ -8,6 +8,7 @@
     ./acme.nix
     ./nextcloud.nix
     ./nginx.nix
+    ./vikunja.nix
   ];
 
   config = {
