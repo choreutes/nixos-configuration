@@ -60,6 +60,9 @@
 
     libinput.enable = true;
 
+    # Smartcard daemon (required for Yubico Authenticator to work)
+    pcscd.enable = true;
+
     printing = {
       enable = true;
 
