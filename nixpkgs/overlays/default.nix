@@ -7,7 +7,7 @@
 
 let
   unstable-previews-overlay = final: prev: {
-    papis = pkgs-unstable.papis;
+    papis = pkgs-unstable.papis.override { withOptDeps = true; };
   };
 
   firefox-addons-overlay = final: prev: {
@@ -16,5 +16,6 @@ let
 in {
   nixpkgs.overlays = [
     (firefox-addons-overlay)
+    (unstable-previews-overlay)
   ];
 }
