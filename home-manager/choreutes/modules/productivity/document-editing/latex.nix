@@ -15,6 +15,7 @@
         collection-basic
 
         collection-bibtexextra
+        collection-binextra
         collection-latex
         collection-latexextra
         collection-latexrecommended
@@ -30,9 +31,7 @@
 
         collection-mathscience
         collection-pictures
-        collection-publishers
-
-        latexmk;
+        collection-publishers;
       };
     };
   };
