@@ -6,11 +6,17 @@
 }:
 
 let
-  cfg = config.host-specific.papis;
+  cfg = config.host-specific.productivity.document-management.papis;
 in {
   options = with lib; {
-    host-specific.papis.library-dir = mkOption{
-      type = with types; uniq str;
+    host-specific.productivity.document-management.papis = {
+      research-dir = mkOption {
+        type = with types; uniq str;
+      };
+
+      textbook-dir = mkOption {
+        type = with types; uniq str;
+      };
     };
   };
 
@@ -18,21 +24,35 @@ in {
     programs.papis = {
       enable = true;
 
-      libraries.Library = {
-        isDefault = true;
+      libraries = {
+        Research = {
+          isDefault = true;
 
-        settings = {
-          dir = "${cfg.library-dir}";
-          header-format = ''
-            {doc.html_escape[author]}
-              <b>“{doc.html_escape[title]}”</b>
-              <span>  <ansiblue>{doc.html_escape[tags]}</ansiblue></span>
-            '';
+          settings = {
+            dir = "${cfg.research-dir}";
+            header-format = ''
+              {doc.html_escape[author]}
+                <b>“{doc.html_escape[title]}”</b>
+                <span>  <ansiblue>{doc.html_escape[tags]}</ansiblue></span>
+              '';
+            whoosh-schema-fields = "['journaltitle', 'booktitle']";
+          };
+        };
+
+        Textbooks = {
+          settings = {
+            dir = "${cfg.textbook-dir}";
+            header-format = ''
+              {doc.html_escape[author]}
+                <b>“{doc.html_escape[title]}”</b>
+                <span>  <ansiblue>{doc.html_escape[tags]}</ansiblue></span>
+              '';
+          };
         };
       };
 
       settings = {
-        database-backend = "papis";
+        database-backend = "whoosh";
         editor = "nvim";
         file-browser = "ranger";
         sort-field = "year";

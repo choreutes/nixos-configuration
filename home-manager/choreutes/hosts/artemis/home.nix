@@ -34,8 +34,9 @@
       pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
     };
 
-    papis = {
-      library-dir = "${config.home.homeDirectory}/Library";
+    productivity.document-management.papis = {
+      research-dir = "${config.home.homeDirectory}/Library/Research";
+      textbook-dir = "${config.home.homeDirectory}/Library/Textbooks";
     };
   };
 }
