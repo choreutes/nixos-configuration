@@ -6,16 +6,32 @@
 
 {
   config = {
-    services.vikunja = {
-      enable = true;
+    services = {
+      mysql = {
+        enable = true;
 
-      database = {
-        host = "localhost";
-        type = "sqlite";
+        ensureDatabases = [ "vikunja" ];
+        ensureUsers = [
+          {
+            name = "vikunja";
+            ensurePermissions = {
+              "vikunja.*" = "ALL PRIVILEGES";
+            };
+          }
+        ];
       };
 
-      frontendHostname = "tasks.choreutes.de";
-      frontendScheme = "http";
+      vikunja = {
+        enable = true;
+
+        database = {
+          host = "localhost";
+          type = "sqlite";
+        };
+
+        frontendHostname = "tasks.choreutes.de";
+        frontendScheme = "http";
+      };
     };
   };
 }
