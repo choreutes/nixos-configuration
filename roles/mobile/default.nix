@@ -41,6 +41,11 @@
     networkmanager = {
       enable = true;
 
+      plugins = with pkgs; [
+        networkmanager-openconnect
+        networkmanager-openvpn
+      ];
+
       wifi.backend = "iwd";
     };
   };
