@@ -25,12 +25,18 @@
         enable = true;
 
         database = {
-          host = "localhost";
-          type = "sqlite";
+          database = "vikunja";
+          host = "/run/mysqld/mysqld.sock";
+          type = "mysql";
+          user = "vikunja";
         };
 
         frontendHostname = "tasks.choreutes.de";
         frontendScheme = "http";
+
+        settings = {
+          service.enableregistration = false;
+        };
       };
     };
   };
