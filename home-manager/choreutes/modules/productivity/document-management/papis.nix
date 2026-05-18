@@ -53,6 +53,7 @@ in {
 
       settings = {
         database-backend = "whoosh";
+        default-query-string = "*";
         editor = "nvim";
         file-browser = "ranger";
         sort-field = "year";
