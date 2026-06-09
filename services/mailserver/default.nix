@@ -30,11 +30,13 @@
       mailboxes = options.mailserver.mailboxes.default // {
         Archive = {
           auto = "subscribe";
-          specialUse = "Archive";
+          special_use = "\\Archive";
         };
       };
 
-      useFsLayout = true;
+      storage = {
+        directoryLayout = "fs";
+      };
 
       vmailGroupName = "vmail";
       vmailUserName = "vmail";
