@@ -9,8 +9,8 @@
     mailserver = {
       enable = true;
 
-      acmeCertificateName = "www.choreutes.de";
-      certificateScheme = "acme";
+      # acmeCertificateName = "www.choreutes.de";
+      # certificateScheme = "acme";
 
       domains = [ "choreutes.de" ];
       fqdn = "opal.choreutes.de";
@@ -38,6 +38,8 @@
 
       vmailGroupName = "vmail";
       vmailUserName = "vmail";
+
+      x509.useACMEHost = "www.choreutes.de";
 
       stateVersion = 3;
     };

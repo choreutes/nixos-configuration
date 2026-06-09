@@ -5,14 +5,15 @@
     enable = true;
 
     plugins = with pkgs.vimPlugins; [
-      awesome-vim-colorschemes
+      papercolor-theme
       vimtex
       vim-airline
       vim-airline-themes
-      vim-colorschemes
       vim-ledger
       vim-nix
     ];
+
+    sideloadInitLua = true;
   };
 
   xdg.configFile."nvim" = {
