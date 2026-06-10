@@ -41,6 +41,11 @@ in
       firefox = {
         enable = true;
 
+        # Firefox now also supports XDG base directory specification (instead of ``.mozilla/firefox``).
+        # However, for now this only encompasses .mozilla/firefox and not native messaging hosts.
+        # For now I will keep the legacy path until I can entirely remove the ``.mozilla`` directory.
+        configPath = ".mozilla/firefox";
+
         languagePacks = [ "de" "en-US" ];
 
         nativeMessagingHosts = with pkgs; [
@@ -107,31 +112,29 @@ in
         enable = true;
         enableDefaultConfig = false;
 
-        matchBlocks = {
+        settings = {
           "opal.choreutes.de" = {
-            forwardAgent = true;
+            ForwardAgent = true;
 
-            remoteForwards = [
-              {
-                bind.address = "/run/user/1000/gnupg/S.gpg-agent";
-                host.address = "/run/user/1000/gnupg/S.gpg-agent.extra";
-              }
-            ];
+            RemoteForward = {
+              bind.address = "/run/user/1000/gnupg/S.gpg-agent";
+              host.address = "/run/user/1000/gnupg/S.gpg-agent.extra";
+            };
           };
 
           # These are the default values for ssh host blocks.
           # I'm keeping them around for now...
           "*" = {
-            addKeysToAgent = "no";
-            compression = false;
-            controlMaster = "no";
-            controlPath = "~/.ssh/master-%r@%n:%p";
-            controlPersist = "no";
-            forwardAgent = false;
-            hashKnownHosts = false;
-            serverAliveCountMax = 3;
-            serverAliveInterval = 0;
-            userKnownHostsFile = "~/.ssh/known_hosts";
+            AddKeysToAgent = "no";
+            Compression = false;
+            ControlMaster = "no";
+            ControlPath = "~/.ssh/master-%r@%n:%p";
+            ControlPersist = "no";
+            ForwardAgent = false;
+            HashKnownHosts = false;
+            ServerAliveCountMax = 3;
+            ServerAliveInterval = 0;
+            UserKnownHostsFile = "~/.ssh/known_hosts";
           };
         };
       };
