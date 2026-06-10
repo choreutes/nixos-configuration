@@ -11,7 +11,7 @@ let
   };
 
   firefox-addons-overlay = final: prev: {
-    firefox-addons = flake-inputs.firefox-addons.packages.${prev.system};
+    firefox-addons = flake-inputs.firefox-addons.packages.${prev.stdenv.hostPlatform.system};
   };
 in {
   nixpkgs.overlays = [
