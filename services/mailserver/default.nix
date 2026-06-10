@@ -9,8 +9,13 @@
     mailserver = {
       enable = true;
 
-      # acmeCertificateName = "www.choreutes.de";
-      # certificateScheme = "acme";
+      accounts = {
+        "tobias.schmalz@choreutes.de" = {
+          catchAll = [ "choreutes.de" ];
+          hashedPasswordFile = "/etc/nixos/configuration.d/users/choreutes/mail_password.pw";
+          name = "choreutes";
+        };
+      };
 
       domains = [ "choreutes.de" ];
       fqdn = "opal.choreutes.de";
@@ -18,14 +23,6 @@
       hierarchySeparator = "/";
 
       indexDir = "/var/lib/dovecot/indices";
-
-      loginAccounts = {
-        "tobias.schmalz@choreutes.de" = {
-          catchAll = [ "choreutes.de" ];
-          hashedPasswordFile = "/etc/nixos/configuration.d/users/choreutes/mail_password.pw";
-          name = "choreutes";
-        };
-      };
 
       mailboxes = options.mailserver.mailboxes.default // {
         Archive = {
@@ -36,10 +33,9 @@
 
       storage = {
         directoryLayout = "fs";
+        group = "vmail";
+        owner = "vmail";
       };
-
-      vmailGroupName = "vmail";
-      vmailUserName = "vmail";
 
       x509.useACMEHost = "www.choreutes.de";
 
