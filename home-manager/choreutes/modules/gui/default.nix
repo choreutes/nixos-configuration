@@ -68,11 +68,13 @@ in
 
         font = {
           name = "SauceCodePro Nerd Font";
-          size = 10;
+          size = 12;
         };
 
         settings = {
           background_opacity = "0.8";
+          cursor_trail = "5";
+          cursor_trail_decay = "0.3 0.5";
           enable_audio_bell = false;
         };
 
