@@ -25,6 +25,12 @@
         inputs.nixpkgs.follows = "nixpkgs";
       };
 
+      nixvim = {
+        url = "github:nix-community/nixvim/nixos-26.05";
+
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+
       firefox-addons = {
         url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
 
@@ -40,6 +46,7 @@
       nixos-hardware,
       nixos-mailserver,
       home-manager,
+      nixvim,
       firefox-addons
     }@inputs:
 
@@ -55,11 +62,12 @@
         }:
         nixpkgs.lib.nixosSystem {
           modules = [
-            ./hosts/${host.directory}/configuration.nix
-            ./nixpkgs
             home-manager.nixosModules.home-manager
+
+            ./hosts/${host.directory}/configuration.nix
+            ./home-manager.nix
+            ./nixpkgs
             {
-              home-manager.useGlobalPkgs = true;
               home-manager.users.choreutes = import ./home-manager/choreutes/hosts/${host.name}/home.nix;
             }
           ] ++ extraModules;
@@ -86,7 +94,7 @@
 
           extraModules = [ nixos-hardware.nixosModules.lenovo-thinkpad-l14-amd ];
 
-          flake-inputs = { inherit firefox-addons; };
+          flake-inputs = { inherit firefox-addons nixvim; };
         };
 
         opal = mkStableNixOSConfiguration {
@@ -99,6 +107,8 @@
           inherit nixpkgs nixpkgs-unstable home-manager;
 
           extraModules = [ nixos-mailserver.nixosModule ];
+
+          flake-inputs = { inherit nixvim; };
         };
       };
     };

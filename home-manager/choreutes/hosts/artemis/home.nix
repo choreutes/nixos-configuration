@@ -1,4 +1,4 @@
-{ config, pkgs, firefox-addons, ... }:
+{ config, pkgs, ... }:
 
 {
   imports = [
