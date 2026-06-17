@@ -1,4 +1,5 @@
 {
+  lib,
   ...
 }:
 
@@ -15,20 +16,39 @@
     };
   };
 
+  diagnostic.settings = {
+    signs = {
+      text = {
+        "__rawKey__vim.diagnostic.severity.ERROR" = "";
+        "__rawKey__vim.diagnostic.severity.WARN" = "󱈸";
+        "__rawKey__vim.diagnostic.severity.INFO" = "";
+        "__rawKey__vim.diagnostic.severity.HINT" = "";
+      };
+    };
+
+    update_in_insert = false;
+  };
+
   files = {
     "after/ftplugin/ledger.lua" = {
       localOpts = {
         foldenable = true;
-	foldmethod = "syntax";
+        foldmethod = "syntax";
 
-	shiftwidth = 4;
-	tabstop = 4;
+        shiftwidth = 4;
+        tabstop = 4;
       };
     };
   };
 
+  globals = {
+    have_nerd_font = true;
+  };
+
   opts = {
     number = true;
+
+    signcolumn = "yes";
 
     list = true;
     listchars = {
