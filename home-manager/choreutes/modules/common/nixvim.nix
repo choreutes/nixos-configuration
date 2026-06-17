@@ -34,9 +34,15 @@
       localOpts = {
         foldenable = true;
         foldmethod = "syntax";
+      };
+    };
 
-        shiftwidth = 4;
-        tabstop = 4;
+    "after/ftplugin/tex.lua" = {
+      localOpts = {
+        expandtab = true;
+        shiftwidth = 2;
+        softtabstop = 2;
+        tabstop = 2;
       };
     };
   };
@@ -49,6 +55,11 @@
     number = true;
 
     signcolumn = "yes";
+
+    expandtab = true;
+    shiftwidth = 4;
+    softtabstop = 4;
+    tabstop = 4;
 
     list = true;
     listchars = {
