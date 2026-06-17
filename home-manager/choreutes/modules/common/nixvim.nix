@@ -52,8 +52,30 @@
   };
 
   plugins = {
+    blink-cmp = {
+      enable = true;
+
+      settings = {
+        keymap = {
+          preset = "default";
+        };
+        snippets = {
+          preset = "luasnip";
+        };
+        sources = {
+          default = [ "lsp" "path" "snippets" "buffer" ];
+        };
+      };
+    };
     ledger.enable = true;
+    lsp = {
+      enable = true;
+      servers = {
+        texlab.enable = true;
+      };
+    };
     lualine.enable = true;
+    luasnip.enable = true;
     nix.enable = true;
     vimtex.enable = true;
   };
