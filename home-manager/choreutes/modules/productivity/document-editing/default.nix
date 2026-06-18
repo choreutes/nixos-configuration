@@ -11,7 +11,7 @@
 
   config = {
     home.packages = with pkgs; [
-      libreoffice-qt6
+      libreoffice-qt-fresh
       typst
     ];
   };
