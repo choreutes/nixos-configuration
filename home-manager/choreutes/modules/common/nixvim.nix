@@ -95,10 +95,24 @@
         };
         sources = {
           default = [ "lsp" "path" "snippets" "buffer" ];
+
+          per_filetype = {
+            ledger = [ "omni" ];
+          };
         };
       };
     };
-    ledger.enable = true;
+    ledger = {
+      enable = true;
+
+      settings = {
+        bin = "ledger";
+        accounts_cmd = "ledger accounts";
+        descriptions_cmd = "ledger payees";
+        date_format = "%Y-%m-%d";
+        decimal_sep = ",";
+      };
+    };
     lsp = {
       enable = true;
       servers = {
