@@ -122,6 +122,14 @@
     lualine.enable = true;
     luasnip.enable = true;
     nix.enable = true;
-    vimtex.enable = true;
+    vimtex = {
+      enable = true;
+
+      # Maybe these options should depend on GUI being enabled.
+      mupdfPackage = null;
+      texlivePackage = null;
+      xdotoolPackage = null;
+      zathuraPackage = null;
+    };
   };
 }
