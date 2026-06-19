@@ -29,14 +29,18 @@
       kde-programs.enable = true;
     };
 
-    ledger = {
-      file = "${config.home.homeDirectory}/Finanzen/main.ledger";
-      pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
-    };
+    productivity = {
+      enable = true;
 
-    productivity.document-management.papis = {
-      research-dir = "${config.home.homeDirectory}/Library/Research";
-      textbook-dir = "${config.home.homeDirectory}/Library/Textbooks";
+      finance = {
+        ledger-file = "${config.home.homeDirectory}/Finanzen/main.ledger";
+        ledger-pricedb = "${config.home.homeDirectory}/Finanzen/.pricedb.ledger";
+      };
+
+      document-management.papis = {
+        research-dir = "${config.home.homeDirectory}/Library/Research";
+        textbook-dir = "${config.home.homeDirectory}/Library/Textbooks";
+      };
     };
   };
 }

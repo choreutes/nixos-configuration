@@ -10,6 +10,12 @@ let
 in {
   options = with lib; {
     host-specific.productivity.document-management.papis = {
+      enable = mkOption {
+        default = config.host-specific.productivity.document-management.enable;
+        example = true;
+        type = with types; bool;
+      };
+
       research-dir = mkOption {
         type = with types; uniq str;
       };
@@ -20,7 +26,7 @@ in {
     };
   };
 
-  config = {
+  config = lib.mkIf cfg.enable {
     programs.papis = {
       enable = true;
 

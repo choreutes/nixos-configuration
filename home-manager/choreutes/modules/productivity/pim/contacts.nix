@@ -1,27 +1,36 @@
-{ config, pkgs, ... }:
-
 {
-  accounts.contact = {
-    accounts."opal_carddav" = {
-      khard.enable = true;
+  config,
+  lib,
+  ...
+}:
 
-      local = {
-        fileExt = ".vcf";
-        type = "filesystem";
-      };
+let
+  cfg = config.host-specific.productivity.pim;
+in
+{
+  config = lib.mkIf cfg.enable {
+    accounts.contact = {
+      accounts."opal_carddav" = {
+        khard.enable = true;
 
-      remote = {
-        passwordCommand = [ "pass" "www/cloud.choreutes.de/choreutes" ];
-        type = "carddav";
-        url = "https://cloud.choreutes.de/remote.php/dav/addressbooks/users/choreutes/kontakte";
-        userName = "${config.home.username}";
-      };
+        local = {
+          fileExt = ".vcf";
+          type = "filesystem";
+        };
 
-      vdirsyncer = {
-        enable = true;
-        metadata = [ "displayname" ];
+        remote = {
+          passwordCommand = [ "pass" "www/cloud.choreutes.de/choreutes" ];
+          type = "carddav";
+          url = "https://cloud.choreutes.de/remote.php/dav/addressbooks/users/choreutes/kontakte";
+          userName = "${config.home.username}";
+        };
+
+        vdirsyncer = {
+          enable = true;
+          metadata = [ "displayname" ];
+        };
       };
+      basePath = "${config.xdg.dataHome}/vdirsyncer/contacts";
     };
-    basePath = "${config.xdg.dataHome}/vdirsyncer/contacts";
   };
 }

@@ -1,11 +1,15 @@
 {
   config,
+  lib,
   pkgs,
   ...
 }:
 
+let
+  cfg = config.host-specific.productivity.document-editing;
+in
 {
-  config = {
+  config = lib.mkIf cfg.enable {
     programs.texlive = {
       enable = true;
 
