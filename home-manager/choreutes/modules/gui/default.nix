@@ -68,7 +68,7 @@ in
 
         font = {
           name = "SauceCodePro Nerd Font";
-          size = 12;
+          size = 14;
         };
 
         settings = {
