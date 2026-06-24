@@ -35,7 +35,12 @@ in
 
         collection-mathscience
         collection-pictures
-        collection-publishers;
+        collection-publishers
+
+        # This can be useful when working with the lipsum package.
+        # It is contained in the langeuropean collection,
+        # but I don't want the other languages (yet).
+        babel-latin;
       };
     };
   };
