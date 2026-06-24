@@ -22,6 +22,7 @@ in
       packages = with pkgs; [
         mpv
         qpdfview
+        yubico-piv-tool
         yubioath-flutter
       ];
 
