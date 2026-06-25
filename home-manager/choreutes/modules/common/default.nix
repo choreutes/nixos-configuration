@@ -42,7 +42,7 @@
 	#      --> Shorter configuration syntax
 	#   2) Nixvim injects some helper functions into the lib argument for all submodules
 	#      that are imported this way.
-        imports = [ ./nixvim.nix ];
+        imports = [ ./nixvim/default.nix ];
       };
     };
 

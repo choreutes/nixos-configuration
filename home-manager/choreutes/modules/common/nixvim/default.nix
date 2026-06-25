@@ -120,7 +120,15 @@
       };
     };
     lualine.enable = true;
-    luasnip.enable = true;
+    luasnip = {
+      enable = true;
+
+      fromLua = [
+        {
+          paths = ./luasnippets;
+        }
+      ];
+    };
     nix.enable = true;
     vimtex = {
       enable = true;
