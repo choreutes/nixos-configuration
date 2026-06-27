@@ -30,6 +30,17 @@
   };
 
   files = {
+    "after/ftplugin/bib.lua" = {
+      localOpts = {
+        expandtab = true;
+        foldenable = true;
+        foldmethod = "syntax";
+        shiftwidth = 2;
+        softtabstop = 2;
+        tabstop = 2;
+      };
+    };
+
     "after/ftplugin/ledger.lua" = {
       localOpts = {
         foldenable = true;
@@ -50,6 +61,17 @@
   globals = {
     have_nerd_font = true;
   };
+
+  keymaps = [
+    {
+      action = "za";
+      key = "<space>";
+      mode = "n";
+      options = {
+        desc = "Toggle folds by hitting spacebar";
+      };
+    }
+  ];
 
   opts = {
     number = true;
@@ -88,7 +110,7 @@
 
       settings = {
         keymap = {
-          preset = "default";
+          preset = "enter";
         };
         snippets = {
           preset = "luasnip";
