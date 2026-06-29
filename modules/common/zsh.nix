@@ -1,14 +1,20 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  environment.pathsToLink = [ "/share/zsh" ];
+  config = {
+    environment.pathsToLink = [ "/share/zsh" ];
 
-  programs.zsh = {
-    enable = true;
+    programs.zsh = {
+      enable = true;
 
-    autosuggestions.enable = true;
-    syntaxHighlighting.enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+    };
+
+    users.defaultUserShell = pkgs.zsh;
   };
-
-  users.defaultUserShell = pkgs.zsh;
 }
