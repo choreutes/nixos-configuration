@@ -41,11 +41,7 @@
     useDHCP = false;  # Deprecated option
   };
 
-  services.xserver.videoDrivers = [
-    "amdgpu"
-    "vesa"
-    "modesetting"
-  ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

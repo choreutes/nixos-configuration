@@ -20,7 +20,12 @@
       ];
     };
 
-    services.xserver.xkb.layout = "de";
+    services.xserver.xkb = {
+      model = "pc105";
+      layout = "de";
+      variant = "e1";
+      options = "lv3:caps_switch_capslock_with_ctrl";
+    };
 
     time.timeZone = "Europe/Berlin";
   };

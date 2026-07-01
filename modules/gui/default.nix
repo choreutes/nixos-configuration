@@ -67,12 +67,6 @@
       };
 
       smartd.enable = true;
-
-      xserver = {
-        enable = true;
-
-        wacom.enable = true;
-      };
     };
   };
 }
