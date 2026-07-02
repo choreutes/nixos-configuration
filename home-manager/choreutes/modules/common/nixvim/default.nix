@@ -60,15 +60,18 @@
 
   globals = {
     have_nerd_font = true;
+
+    mapleader = "<Space>";
+    maplocalleader = "\\";
   };
 
   keymaps = [
     {
-      action = "za";
-      key = "<space>";
-      mode = "n";
+      action = "<Nop>";
+      key = "<Space>";
+      mode = [ "n" "v" ];
       options = {
-        desc = "Toggle folds by hitting spacebar";
+        desc = "Unbind spacebar to use it as mapleader";
       };
     }
   ];
