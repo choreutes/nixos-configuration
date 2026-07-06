@@ -30,6 +30,9 @@ in
         collection-fontsrecommended
         collection-fontutils
 
+        # For some reason this is in the XeTeX collection...
+        realscripts
+
         collection-langenglish
         collection-langgerman
 
