@@ -1,4 +1,4 @@
-return {
+local bib_entries = {
     s(
         {
             trig = "art",
@@ -119,3 +119,5 @@ return {
         )
     )
 }
+
+return bib_entries

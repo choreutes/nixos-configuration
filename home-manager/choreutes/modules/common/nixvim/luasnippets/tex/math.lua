@@ -1,4 +1,4 @@
-return {
+local math_snippets = {
     s(
         {
             trig = "eqn",
@@ -6,13 +6,16 @@ return {
         },
         fmta(
             [[
-            \begin{equation}
+            \begin{equation} \label{eq:<>}
               <>
             \end{equation}
             ]],
             {
-                i(1)
+                i(1, "Label"),
+                i(2, "The hard stuff...")
             }
         )
-    )
+    ),
 }
+
+return math_snippets
