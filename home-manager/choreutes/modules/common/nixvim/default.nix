@@ -46,6 +46,39 @@
         foldenable = true;
         foldmethod = "syntax";
       };
+
+      keymaps = [
+        {
+          action = ":LedgerAlign<CR>";
+          key = "<LocalLeader>a";
+          mode = [ "n" "v" ];
+          options = {
+            desc = "Align amounts in range at decimal separator";
+            buffer = true;
+            silent = true;
+          };
+        }
+        {
+          action = "vip :LedgerAlign<CR>";
+          key = "<LocalLeader>A";
+          mode = [ "n" ];
+          options = {
+            desc = "Align amounts in current posting at decimal separator";
+            buffer = true;
+            silent = true;
+          };
+        }
+        {
+          action = ":LedgerAlignBuffer<CR>";
+          key = "<LocalLeader>ab";
+          mode = [ "n" ];
+          options = {
+            desc = "Align amounts in entire buffer at decimal separator";
+            buffer = true;
+            silent = true;
+          };
+        }
+      ];
     };
 
     "after/ftplugin/tex.lua" = {
