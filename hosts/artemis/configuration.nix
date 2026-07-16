@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ../../modules/common
     ../../modules/gui
-    ../../roles/mobile
+    ../../modules/mobile
     ../../users/choreutes
   ];
 

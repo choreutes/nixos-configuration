@@ -5,7 +5,7 @@
     ./hardware-configuration.nix
     ./network-configuration.nix
     ../../modules/common
-    ../../roles/headless
+    ../../modules/headless
     ../../services/mailserver
     ../../services/webserver
     ../../users/choreutes
