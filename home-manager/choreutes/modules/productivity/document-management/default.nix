@@ -26,5 +26,7 @@ in
     home.packages = with pkgs; [
       jabref
     ];
+
+    programs.calibre.enable = true;
   };
 }

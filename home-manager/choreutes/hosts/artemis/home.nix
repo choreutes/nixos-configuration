@@ -2,8 +2,6 @@
 
 {
   imports = [
-    ../../roles/personal
-
     ../../modules/common
     ../../modules/cryptoplexity
     ../../modules/gui
