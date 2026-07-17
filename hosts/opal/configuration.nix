@@ -6,8 +6,8 @@
     ./network-configuration.nix
     ../../modules/common
     ../../modules/headless
-    ../../services/mailserver
-    ../../services/webserver
+    ../../modules/mailserver
+    ../../modules/webserver
     ../../users/choreutes
   ];
 
