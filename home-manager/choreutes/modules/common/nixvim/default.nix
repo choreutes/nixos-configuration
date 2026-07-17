@@ -29,6 +29,10 @@
     update_in_insert = false;
   };
 
+  extraFiles = {
+    "lua/luasnip-utils/tex/conditions.lua".source = ./luasnip-utils/tex/conditions.lua;
+  };
+
   files = {
     "after/ftplugin/bib.lua" = {
       localOpts = {
@@ -183,7 +187,7 @@
 
       fromLua = [
         {
-          paths = ./luasnippets;
+          paths = ./luasnip-snippets;
         }
       ];
     };
