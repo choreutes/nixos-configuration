@@ -113,6 +113,13 @@
     }
   ];
 
+  lsp = {
+    servers = {
+      texlab.enable = true;
+      tinymist.enable = true;
+    };
+  };
+
   opts = {
     number = true;
 
@@ -173,12 +180,6 @@
         descriptions_cmd = "ledger payees";
         date_format = "%Y-%m-%d";
         decimal_sep = ",";
-      };
-    };
-    lsp = {
-      enable = true;
-      servers = {
-        texlab.enable = true;
       };
     };
     lualine.enable = true;
