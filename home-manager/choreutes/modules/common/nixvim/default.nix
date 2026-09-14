@@ -9,6 +9,11 @@
       enable = true;
 
       settings = {
+        groups= {
+          github_dark = {
+            Whitespace = { fg = "palette.green"; };
+          };
+        };
         options = {
           transparent = true;
         };
