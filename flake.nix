@@ -97,6 +97,18 @@
           flake-inputs = { inherit firefox-addons nixvim; };
         };
 
+        domovoi = mkStableNixOSConfiguration {
+          host = {
+            directory = "domovoi";
+            name = "domovoi";
+            system = "x86_64-linux";
+          };
+
+          inherit nixpkgs nixpkgs-unstable home-manager;
+
+          flake-inputs = { inherit firefox-addons nixvim; };
+        };
+
         opal = mkStableNixOSConfiguration {
           host = {
             directory = "opal";
