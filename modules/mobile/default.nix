@@ -70,19 +70,6 @@
     brillo.enable = true;
   };
 
-  networking = {
-    networkmanager = {
-      enable = true;
-
-      plugins = with pkgs; [
-        networkmanager-openconnect
-        networkmanager-openvpn
-      ];
-
-      wifi.backend = "iwd";
-    };
-  };
-
   #services.acpid.handlers = {
   #  ac-power = {
   #    action = ''
