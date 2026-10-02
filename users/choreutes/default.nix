@@ -1,4 +1,8 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  ...
+}:
 
 {
   users.users.choreutes = {
@@ -9,7 +13,7 @@
 
     openssh.authorizedKeys.keyFiles = [ ./ssh_key.pub ];
 
-    hashedPasswordFile = "/etc/nixos/configuration.d/users/choreutes/login_password.pw";
+    hashedPasswordFile = "/etc/secrets/choreutes/login_password.txt";
 
     packages = with pkgs; [
       home-manager
