@@ -4,6 +4,7 @@
   imports = [
     ./hardware-configuration.nix
     ../../modules/common
+    ../../modules/data-storage
     ../../modules/gui
     ../../users/choreutes
   ];
