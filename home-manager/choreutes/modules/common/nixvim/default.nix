@@ -120,7 +120,15 @@
 
   lsp = {
     servers = {
-      texlab.enable = true;
+      texlab = {
+        enable = true;
+
+        config = {
+          cmd = [ "texlab" ];
+          filetypes = [ "tex" "bib" ];
+          root_markers = [ ".git" ".latexmkrc" "latexmkrc" ".texlabroot" "texlabroot" ];
+        };
+      };
       tinymist.enable = true;
     };
   };
