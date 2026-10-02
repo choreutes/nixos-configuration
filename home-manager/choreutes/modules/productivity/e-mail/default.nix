@@ -128,6 +128,8 @@ in
       thunderbird = {
         enable = true;
 
+        languagePacks = [ "de" "en-US" ];
+
         profiles = {
           choreutes = {
             isDefault = true;
