@@ -35,6 +35,7 @@ in {
     home.packages = with pkgs; [
       ffmpeg
       flac
+      kid3
       vorbis-tools
     ];
 
