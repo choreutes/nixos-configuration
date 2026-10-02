@@ -5,6 +5,7 @@
     ../../modules/common
     ../../modules/cryptoplexity
     ../../modules/gui
+    ../../modules/media
     ../../modules/productivity
   ];
 
@@ -25,6 +26,12 @@
       enable = true;
 
       kde-programs.enable = true;
+    };
+
+    media.music = {
+      enable = true;
+
+      dir = "/vault/Musik";
     };
 
     productivity = {
