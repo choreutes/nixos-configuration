@@ -57,10 +57,6 @@ in
           name = "abfall";
           color = "#804d19";
         };
-        "AG Fischlin" = cloudCalendarConfig {
-          name = "ag-fischlin";
-          color = "#ff9f40"; # HSB(30,75,100)
-        };
         "Ehrenamt" = cloudCalendarConfig {
           name = "ehrenamt";
           color = "#1a801a"; # HSB(120,80,50)
@@ -81,11 +77,15 @@ in
           name = "physikstudium";
           color = "#e6e617"; # HSB(60,90,90)
         };
-        "TC Blau-Gold Langen" = cloudCalendarConfig {
+        "Promotion" = cloudCalendarConfig {
+          name = "ag-fischlin";
+          color = "#ff9f40"; # HSB(30,75,100)
+        };
+        "TC_Langen" = cloudCalendarConfig {
           name = "tc-blau-gold-langen";
           color = "#5cc9ff";
         };
-        "TSZ BGC Darmstadt" = cloudCalendarConfig {
+        "TSZ_Darmstadt" = cloudCalendarConfig {
           name = "tsz-bgc-darmstadt";
           color = "#875bff";
         };
