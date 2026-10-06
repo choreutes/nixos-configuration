@@ -6,15 +6,18 @@
 
 let
   cfg = config.host-specific.productivity.pim;
+
+  basePath = "${config.xdg.dataHome}/vdirsyncer/contacts";
 in
 {
   config = lib.mkIf cfg.enable {
     accounts.contact = {
-      accounts."opal_carddav" = {
+      accounts."Kontakte" = {
         khard.enable = true;
 
         local = {
           fileExt = ".vcf";
+          path = "${basePath}/opal/kontakte";
           type = "filesystem";
         };
 
@@ -25,12 +28,20 @@ in
           userName = "${config.home.username}";
         };
 
+        thunderbird = {
+          enable = true;
+
+          profiles = [ "choreutes" ];
+        };
+
         vdirsyncer = {
           enable = true;
           metadata = [ "displayname" ];
+          useVcard4 = true;
         };
       };
-      basePath = "${config.xdg.dataHome}/vdirsyncer/contacts";
+
+      inherit basePath;
     };
   };
 }
