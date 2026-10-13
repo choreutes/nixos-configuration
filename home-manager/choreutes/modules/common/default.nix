@@ -12,6 +12,7 @@
     ./gnupg
     ./htop.nix
     ./pass.nix
+    ./rustutils.nix
     ./zsh-config
   ];
 
@@ -21,9 +22,8 @@
       homeDirectory = "/home/choreutes";
 
       packages = with pkgs; [
-        mtpfs
+        gnumake
         parallel
-        ranger
       ];
 
       sessionVariables = {
@@ -38,10 +38,10 @@
         enable = true;
 
         # This way of importing the config has two main advantages:
-	#   1) The submodule lives inside the namespace "programs.nixvim" by default
-	#      --> Shorter configuration syntax
-	#   2) Nixvim injects some helper functions into the lib argument for all submodules
-	#      that are imported this way.
+        #   1) The submodule lives inside the namespace "programs.nixvim" by default
+        #      --> Shorter configuration syntax
+        #   2) Nixvim injects some helper functions into the lib argument for all submodules
+        #      that are imported this way.
         imports = [ ./nixvim/default.nix ];
       };
     };

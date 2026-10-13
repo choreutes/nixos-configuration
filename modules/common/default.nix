@@ -20,8 +20,6 @@
     };
 
     environment.systemPackages = with pkgs; [
-      gnumake
-      miller
       tree
     ];
 

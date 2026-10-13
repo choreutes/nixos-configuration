@@ -19,10 +19,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      alacritty
       kitty
-      razergenie
-      smartmontools
     ];
 
     hardware = {

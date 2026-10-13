@@ -13,6 +13,7 @@
 
       systemPackages = with pkgs; [
         hdparm
+        smartmontools
       ];
     };
 
