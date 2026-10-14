@@ -31,13 +31,23 @@
       difftastic.enable = true;
 
       # ls in rust (1)
-      eza.enable = true;
+      eza = {
+        enable = true;
+
+        # This option sets up a number of aliases that I do not want (for now)
+        enableZshIntegration = false;
+      };
 
       # find in rust
       fd.enable = true;
 
       # ls in rust (2)
-      lsd.enable = true;
+      lsd = {
+        enable = true;
+
+        # This option sets up a number of aliases that I do not want (for now)
+        enableZshIntegration = false;
+      };
 
       # grep in rust
       ripgrep.enable = true;
