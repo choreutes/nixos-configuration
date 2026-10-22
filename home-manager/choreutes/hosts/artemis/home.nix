@@ -36,6 +36,8 @@
       };
 
       document-management.papis = {
+        enable = false;
+
         research-dir = "${config.home.homeDirectory}/Library/Research";
         textbook-dir = "${config.home.homeDirectory}/Library/Textbooks";
       };
