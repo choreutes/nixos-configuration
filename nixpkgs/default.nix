@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   pkgs-unstable,
@@ -16,13 +17,20 @@ let
   firefox-addons-overlay = final: prev: {
     firefox-addons = flake-inputs.firefox-addons.packages.${prev.stdenv.hostPlatform.system};
   };
-in {
-  nixpkgs = {
-    config.allowUnfreePredicate = (unfree-predicate);
-
-    overlays = [
-      (firefox-addons-overlay)
-      (unstable-previews-overlay)
+in
+  {
+    imports = [
+      ./php-hotfix.nix
     ];
-  };
-}
+
+    config = {
+      nixpkgs = {
+        config.allowUnfreePredicate = (unfree-predicate);
+
+        overlays = [
+          (firefox-addons-overlay)
+          (unstable-previews-overlay)
+        ];
+      };
+    };
+  }
