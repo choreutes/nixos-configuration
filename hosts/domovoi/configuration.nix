@@ -31,10 +31,14 @@
     };
   };
 
-  hardware.amdgpu = {
-    initrd.enable = true;
+  hardware = {
+    amdgpu = {
+      initrd.enable = true;
 
-    opencl.enable = true;
+      opencl.enable = true;
+    };
+
+    bluetooth.enable = true;
   };
 
   networking = {

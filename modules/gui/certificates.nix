@@ -1,8 +1,11 @@
-{ config, pkgs, ... }:
+{
+  config,
+  ...
+}:
 
 {
-  environment = {
-    etc = {
+  config = {
+    environment.etc = {
       "ssl/certs/ISRG_Root_X1.pem".text = ''
         -----BEGIN CERTIFICATE-----
         MIIFazCCA1OgAwIBAgIRAIIQz7DSQONZRGPgu2OCiwAwDQYJKoZIhvcNAQELBQAw
@@ -63,42 +66,4 @@
         '';
     };
   };
-
-  hardware = {
-    bluetooth.enable = true;
-
-    brillo.enable = true;
-  };
-
-  #services.acpid.handlers = {
-  #  ac-power = {
-  #    action = ''
-  #      echo "ACPI event triggered: $1" >> /tmp/acpi_log.txt
-  #      argv = ( $1 )
-  #      case "''${argv[1]}" in
-  #        AC*)
-  #          case "''${argv[3]}" in
-  #            00000000)
-  #              logger "AC power disconnected"
-  #              cpupower frequency-set -g powersave
-  #              logger "CPU frequency governor set to powersave"
-  #            ;;
-  #            00000001)
-  #              logger "AC power connected"
-  #              cpupower frequency-set -g schedutil
-  #              logger "CPU frequency governor set to schedutil"
-  #            ;;
-  #          esac
-  #        ;;
-  #        *)
-  #          echo "ACPI action undefined: ''${argv[1]}" >> /tmp/acpi_log.txt
-  #        ;;
-  #      esac
-  #    '';
-
-  #    event = "ac_adapter/*";
-  #  };
-  #};
-
-  users.groups.network = { };
 }

@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./certificates.nix
     ./fonts.nix
   ];
 
@@ -23,6 +24,8 @@
     ];
 
     hardware = {
+      brillo.enable = true;
+
       firmware = with pkgs; [ sof-firmware ];
 
       openrazer = {
