@@ -8,7 +8,7 @@
 }:
 
 let
-  unfree-predicate = pkg: builtins.elem (lib.getName pkg) [ "cups-brother-hll2340dw" "zoom" ];
+  unfree-predicate = pkg: builtins.elem (lib.getName pkg) [ "cups-brother-hll2340dw" "zoom" "steam-unwrapped" ];
 
   unstable-previews-overlay = final: prev: {
     papis = pkgs-unstable.papis.override { withOptDeps = true; };

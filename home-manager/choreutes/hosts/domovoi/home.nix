@@ -4,6 +4,7 @@
   imports = [
     ../../modules/common
     ../../modules/cryptoplexity
+    ../../modules/gaming
     ../../modules/gui
     ../../modules/media
     ../../modules/productivity
