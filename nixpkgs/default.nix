@@ -19,10 +19,6 @@ let
   };
 in
   {
-    imports = [
-      ./php-hotfix.nix
-    ];
-
     config = {
       nixpkgs = {
         config.allowUnfreePredicate = (unfree-predicate);
