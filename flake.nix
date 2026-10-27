@@ -66,6 +66,7 @@
 
             ./hosts/${host.directory}/configuration.nix
             ./home-manager.nix
+            (import ./nix-config.nix { inherit nixpkgs; })
             ./nixpkgs
             {
               home-manager.users.choreutes = import ./home-manager/choreutes/hosts/${host.name}/home.nix;
