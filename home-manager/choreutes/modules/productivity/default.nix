@@ -6,6 +6,7 @@
 
 {
   imports = [
+    ./ai
     ./document-editing
     ./document-management
     ./e-mail
